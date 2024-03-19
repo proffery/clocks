@@ -1,6 +1,5 @@
 import style from './App.module.css'
 import Switch from '@mui/material/Switch'
-import useStayAwake from 'use-stay-awake'
 import { useEffect, useState } from 'react'
 import { AnalogClock } from './AnalogClock/AnalogClock'
 import { DigitalClock } from './DigitalClock/DigitalClock'
@@ -9,14 +8,41 @@ import FormControlLabel from '@mui/material/FormControlLabel'
 function App() {
   const [date, setDate] = useState(new Date())
   const [isAnalog, setIsAnalog] = useState(false)
-  const device = useStayAwake()
+  let wakeLock: any = null
+
+  const requestWakeLock = async () => {
+    try {
+      wakeLock = await navigator.wakeLock.request('screen')
+      wakeLock.addEventListener('release', () => {
+        console.log('Wake Lock was released')
+      })
+      console.log('Wake Lock is active')
+    } catch (err: any) {
+      console.error(`${err.name}, ${err.message}`)
+    }
+  }
+
+  const releaseWakeLock = async () => {
+    if (!wakeLock) {
+      return
+    }
+    try {
+      await wakeLock.release()
+      wakeLock = null
+    } catch (err: any) {
+      console.error(`${err.name}, ${err.message}`)
+    }
+  }
 
   useEffect(() => {
-    device.preventSleeping()
+    requestWakeLock()
     const intervalId = setInterval(() => {
       setDate(new Date())
     }, 1000)
-    return () => clearInterval(intervalId)
+    return () => {
+      clearInterval(intervalId)
+      //releaseWakeLock()
+    }
   }, [])
 
   const handleChange = () => {
