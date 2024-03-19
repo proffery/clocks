@@ -1,5 +1,6 @@
 import style from './App.module.css'
 import Switch from '@mui/material/Switch'
+import useStayAwake from 'use-stay-awake'
 import { useEffect, useState } from 'react'
 import { AnalogClock } from './AnalogClock/AnalogClock'
 import { DigitalClock } from './DigitalClock/DigitalClock'
@@ -8,8 +9,10 @@ import FormControlLabel from '@mui/material/FormControlLabel'
 function App() {
   const [date, setDate] = useState(new Date())
   const [isAnalog, setIsAnalog] = useState(false)
+  const device = useStayAwake()
 
   useEffect(() => {
+    device.preventSleeping()
     const intervalId = setInterval(() => {
       setDate(new Date())
     }, 1000)
