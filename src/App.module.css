@@ -1,14 +1,18 @@
-.App {
-  background-color: #282c34;
-  min-height: 100vh;
+.clockContainer {
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(8px + 2vmin);
-  color: #61dafb;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  justify-content: center;
+  flex-direction: column;
+  padding: calc(5px + 2vmin);
+  height: 100vh;
+  width: 100vw;
 }
 
-a {
-  color: #6192fb;
+.switcherContainer {
+  position: fixed;
+  top: 0;
+  right: 0;
+  height: fit-content;
 }

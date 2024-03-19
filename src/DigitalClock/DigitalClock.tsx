@@ -4,8 +4,8 @@ type DigitalClockProps = {
     date: Date
 }
 
-export const DigitalClock: React.FC<DigitalClockProps> = ({date}) => {
-    
+export const DigitalClock: React.FC<DigitalClockProps> = ({ date }) => {
+
     const twoDigitString = (num: number) => num < 10 ? '0' + num : num
 
     return (

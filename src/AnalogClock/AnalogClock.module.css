@@ -1,17 +1,24 @@
 .analogClock {
   display: flex;
-  position: relative;
+  position: fixed;
+  top: 50%;
+  left: 50%;
   flex-direction: column;
-  height: 100%;
   aspect-ratio: 1/1;
   align-items: center;
   align-self: center;
   justify-content: center;
-  transform: rotate(-45deg);
+  justify-self: center;
+  transform-origin: center;
+  transform: rotate(-45deg) translate(-15%, -45%);
 }
 
 .analogClockRow {
   display: flex;
+  height: 15vw;
+  width: 45vw;
+  max-height: 15vh;
+  max-width: 15vh;
 }
 
 .analogClockCell {
@@ -19,10 +26,13 @@
   align-items: center;
   justify-content: center;
   text-align: center;
-  height: calc(40px + 4vmin);
+  width: 15vw;
+  height: 15vw;
+  max-width: 15vh;
+  max-height: 15vh;
   aspect-ratio: 1/1;
   font-family: Orbitron, sans-serif;
-  font-size: calc(30px + 2vmin);
+  font-size: 5vmin;
   font-weight: 500;
   transform: rotate(45deg);
 }
@@ -35,8 +45,8 @@
 .hourHand::before {
   position: absolute;
   content: "";
-  height: calc(20px + 2vmin);
-  width: 9px;
+  height: 6vmin;
+  width: 1vmin;
   background-color: #61dafb;
   top: 50%;
   transform-origin: top;
@@ -51,8 +61,8 @@
 .minHand::before {
   position: absolute;
   content: "";
-  height: calc(40px + 2vmin);
-  width: 5px;
+  height: 12vmin;
+  width: .5vmin;
   background-color: #61dafb;
   top: 50%;
   outline: 1px solid #282c34;
@@ -68,7 +78,7 @@
 .secHand::before {
   position: absolute;
   content: "";
-  height: calc(60px + 2vmin);
+  height: 16vmin;
   width: 1px;
   background-color: #61dafb;
   top: 50%;
@@ -87,7 +97,7 @@
   content: "◦";
   left: 0%;
   top: 50%;
-  transform: translate(-175%, -50%);
+  transform: translate(-325%, -50%);
 }
 
 .horizontalDecorateDots::after {
@@ -95,7 +105,7 @@
   content: "◦";
   left: 100%;
   top: 50%;
-  transform: translate(75%, -50%);
+  transform: translate(225%, -50%);
 }
 
 .verticalDecorateDots {
@@ -107,12 +117,12 @@
   position: absolute;
   content: "◦";
   top: 0%;
-  transform: translate(0%, -75%);
+  transform: translate(0%, -125%);
 }
 
 .verticalDecorateDots::after {
   position: absolute;
   content: "◦";
   top: 100%;
-  transform: translate(0%, -25%);
+  transform: translate(0%, 25%);
 }
