@@ -5,12 +5,14 @@
     {
       "src": "favicon.svg",
       "sizes":"128x128",
-      "type": "image/svg"
+      "type": "image/svg",
+      "purpose": "any"
     },
     {
       "src": "favicon.svg",
       "sizes":"512x512",
-      "type": "image/svg"
+      "type": "image/svg",
+      "purpose": "any"
     },
     {
       "src": "./maskable_128.png",
