@@ -1,7 +1,7 @@
 
 .digitalClock {
     display: flex;
-    gap: calc(var(--main-font) + 4vw);
+    gap: var(--main-font);
     height: 90%;
     width: 100%;
     align-items: center;
@@ -27,7 +27,7 @@
     content: ':';
     font-size: var(--large-font);
     font-family: Orbitron, sans-serif;
-    right: -26%;
+    right: -22%;
     top: 12%;
 }
 
