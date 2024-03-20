@@ -10,7 +10,7 @@
   justify-content: center;
   justify-self: center;
   transform-origin: center;
-  transform: rotate(-45deg) translate(-25%, -45%);
+  transform: rotate(-45deg) translate(-20%, -50%);
 }
 
 .analogClockRow {

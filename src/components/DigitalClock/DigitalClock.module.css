@@ -19,7 +19,7 @@
     flex-direction: column;
     align-items: center;
     justify-content: end;
-    min-width: 28%;
+    min-width: 27%;
 }
 
 .digitalClockCell::after {
@@ -27,7 +27,7 @@
     content: ':';
     font-size: var(--large-font);
     font-family: Orbitron, sans-serif;
-    right: -20%;
+    right: -26%;
     top: 12%;
 }
 

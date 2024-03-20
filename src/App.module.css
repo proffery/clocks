@@ -4,7 +4,6 @@
   align-items: center;
   justify-content: center;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  justify-content: center;
   flex-direction: column;
   padding: calc(5px + 2vmin);
   height: 100vh;
