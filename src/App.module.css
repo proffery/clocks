@@ -21,4 +21,5 @@
   top: 0;
   left: 0%;
   height: fit-content;
+  z-index: 9999;
 }

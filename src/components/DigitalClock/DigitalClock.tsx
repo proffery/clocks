@@ -1,10 +1,11 @@
+import { memo } from 'react'
 import style from './DigitalClock.module.css'
 
 type DigitalClockProps = {
     date: Date
 }
 
-export const DigitalClock: React.FC<DigitalClockProps> = ({ date }) => {
+export const DigitalClock: React.FC<DigitalClockProps> = memo(({ date }) => {
 
     const twoDigitString = (num: number) => num < 10 ? '0' + num : num
 
@@ -24,4 +25,4 @@ export const DigitalClock: React.FC<DigitalClockProps> = ({ date }) => {
             </div>
         </div>
     )
-}
+})

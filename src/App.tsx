@@ -9,9 +9,9 @@ function App() {
   const [date, setDate] = useState(new Date())
   const [isAnalog, setIsAnalog] = useState(false)
   const [isLocked, setIsLocked] = useState(false)
-  let wakeLock: WakeLockSentinel | null = null
+  let wakeLock: WakeLockSentinel | null
 
-  const requestWakeLock = async () => {
+  async function requestWakeLock() {
     try {
       wakeLock = await navigator.wakeLock.request('screen')
       wakeLock.addEventListener('release', () => {
@@ -24,15 +24,12 @@ function App() {
     }
   }
 
-  const releaseWakeLock = async () => {
-    if (!wakeLock) {
-      return
-    }
+  async function releaseWakeLock() {
     try {
-      await wakeLock.release()
-      wakeLock.removeEventListener('release', () => {
-        releaseWakeLock()
-      })
+      await wakeLock?.release()
+      // wakeLock?.removeEventListener('release', () => {
+      //   releaseWakeLock()
+      // })
       wakeLock = null
       setIsLocked(false)
       console.log('Wake Lock was released')
@@ -40,12 +37,9 @@ function App() {
       console.error(`${err.name}, ${err.message}`)
     }
   }
-
+  
   useEffect(() => {
     requestWakeLock()
-  }, [])
-
-  useEffect(() => {
     const intervalId = setInterval(() => {
       setDate(new Date())
     }, 1000)
@@ -63,10 +57,10 @@ function App() {
       <div className={style.switcherContainer}>
         <ScreenLocker
           isLocked={isLocked}
-          lockCsreen={requestWakeLock}
-          unlockCsreen={releaseWakeLock}
+          lockScreen={requestWakeLock}
+          unlockScreen={releaseWakeLock}
         />
-        <ClocksSwitcher aria-label="Clock type swicher"
+        <ClocksSwitcher
           checked={isAnalog}
           onChange={handleChange}
         />

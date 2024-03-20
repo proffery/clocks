@@ -1,10 +1,11 @@
+import { memo } from 'react'
 import style from './AnalogClock.module.css'
 
 type AnalogClockProps = {
     date: Date
 }
 
-export const AnalogClock: React.FC<AnalogClockProps> = ({ date }) => {
+export const AnalogClock: React.FC<AnalogClockProps> = memo(({ date }) => {
 
     const digitToDegreeConvertor = (val: number) => {
         return val * 6
@@ -46,4 +47,4 @@ export const AnalogClock: React.FC<AnalogClockProps> = ({ date }) => {
             </div>
         </div>
     )
-}
+})
