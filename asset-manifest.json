@@ -1,13 +1,17 @@
 {
   "files": {
-    "main.css": "/clocks/static/css/main.74d5cffa.css",
-    "main.js": "/clocks/static/js/main.1656edd1.js",
+    "main.css": "/clocks/static/css/main.67d80c97.css",
+    "main.js": "/clocks/static/js/main.7b4b49d8.js",
+    "static/media/clock-digital.svg": "/clocks/static/media/clock-digital.2f9e79776905e51510375d93dfb23876.svg",
+    "static/media/unlocked.svg": "/clocks/static/media/unlocked.a5fe1a3aeb5fcc7a50726157fca15f8d.svg",
+    "static/media/locked.svg": "/clocks/static/media/locked.224699d3daba0e41abeb7d8daa2435a7.svg",
     "index.html": "/clocks/index.html",
-    "main.74d5cffa.css.map": "/clocks/static/css/main.74d5cffa.css.map",
-    "main.1656edd1.js.map": "/clocks/static/js/main.1656edd1.js.map"
+    "static/media/clock-analog.svg": "/clocks/static/media/clock-analog.ae684814efdda50bf8abd41fd17b0a2b.svg",
+    "main.67d80c97.css.map": "/clocks/static/css/main.67d80c97.css.map",
+    "main.7b4b49d8.js.map": "/clocks/static/js/main.7b4b49d8.js.map"
   },
   "entrypoints": [
-    "static/css/main.74d5cffa.css",
-    "static/js/main.1656edd1.js"
+    "static/css/main.67d80c97.css",
+    "static/js/main.7b4b49d8.js"
   ]
 }
