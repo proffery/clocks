@@ -14,32 +14,30 @@ function App() {
   async function requestWakeLock() {
     try {
       wakeLock = await navigator.wakeLock.request('screen')
-      wakeLock.addEventListener('release', () => {
-        releaseWakeLock()
-      })
-      setIsLocked(true)
+      wakeLock.addEventListener('release', releaseWakeLock)
       console.log('Wake Lock is active')
+      setIsLocked(true)
     } catch (err: any) {
       console.error(`${err.name}, ${err.message}`)
     }
   }
 
   async function releaseWakeLock() {
+    if (!wakeLock) return
     try {
-      await wakeLock?.release()
-      // wakeLock?.removeEventListener('release', () => {
-      //   releaseWakeLock()
-      // })
-      wakeLock = null
+      await wakeLock.release()
       setIsLocked(false)
       console.log('Wake Lock was released')
     } catch (err: any) {
       console.error(`${err.name}, ${err.message}`)
     }
   }
+
+  useEffect(()=>{
+    requestWakeLock()
+  },[])
   
   useEffect(() => {
-    requestWakeLock()
     const intervalId = setInterval(() => {
       setDate(new Date())
     }, 1000)
@@ -58,7 +56,6 @@ function App() {
         <ScreenLocker
           isLocked={isLocked}
           lockScreen={requestWakeLock}
-          unlockScreen={releaseWakeLock}
         />
         <ClocksSwitcher
           checked={isAnalog}
