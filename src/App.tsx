@@ -66,7 +66,7 @@ function App() {
           lockCsreen={requestWakeLock}
           unlockCsreen={releaseWakeLock}
         />
-        <ClocksSwitcher
+        <ClocksSwitcher aria-label="Clock type swicher"
           checked={isAnalog}
           onChange={handleChange}
         />
