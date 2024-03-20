@@ -8,14 +8,16 @@ import { ScreenLocker } from './components/ScreenLocker/ScreenLocker'
 function App() {
   const [date, setDate] = useState(new Date())
   const [isAnalog, setIsAnalog] = useState(false)
-  const [wakeLock, setWakeLock] = useState<WakeLockSentinel | null>(null)
-  
+  const [isLocked, setIsLocked] = useState(false)
+  let wakeLock: WakeLockSentinel | null = null
+
   const requestWakeLock = async () => {
     try {
-      setWakeLock(await navigator.wakeLock.request('screen'))
-      wakeLock?.addEventListener('release', () => {
+      wakeLock = await navigator.wakeLock.request('screen')
+      wakeLock.addEventListener('release', () => {
         releaseWakeLock()
       })
+      setIsLocked(true)
       console.log('Wake Lock is active')
     } catch (err: any) {
       console.error(`${err.name}, ${err.message}`)
@@ -28,8 +30,12 @@ function App() {
     }
     try {
       await wakeLock.release()
+      wakeLock.removeEventListener('release', () => {
+        releaseWakeLock()
+      })
+      wakeLock = null
+      setIsLocked(false)
       console.log('Wake Lock was released')
-      setWakeLock(null)
     } catch (err: any) {
       console.error(`${err.name}, ${err.message}`)
     }
@@ -56,7 +62,7 @@ function App() {
     <div className={style.clockContainer}>
       <div className={style.switcherContainer}>
         <ScreenLocker
-          isLocked={!!wakeLock}
+          isLocked={isLocked}
           lockCsreen={requestWakeLock}
           unlockCsreen={releaseWakeLock}
         />
