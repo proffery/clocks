@@ -10,7 +10,7 @@
   justify-content: center;
   justify-self: center;
   transform-origin: center;
-  transform: rotate(-45deg) translate(-15%, -45%);
+  transform: rotate(-45deg) translate(-25%, -45%);
 }
 
 .analogClockRow {
@@ -32,7 +32,7 @@
   max-height: 15vh;
   aspect-ratio: 1/1;
   font-family: Orbitron, sans-serif;
-  font-size: 5vmin;
+  font-size: 6vmin;
   font-weight: 500;
   transform: rotate(45deg);
 }
@@ -97,7 +97,7 @@
   content: "◦";
   left: 0%;
   top: 50%;
-  transform: translate(-325%, -50%);
+  transform: translate(-300%, -50%);
 }
 
 .horizontalDecorateDots::after {
@@ -105,7 +105,7 @@
   content: "◦";
   left: 100%;
   top: 50%;
-  transform: translate(225%, -50%);
+  transform: translate(200%, -50%);
 }
 
 .verticalDecorateDots {
@@ -117,12 +117,12 @@
   position: absolute;
   content: "◦";
   top: 0%;
-  transform: translate(0%, -125%);
+  transform: translate(0%, -100%);
 }
 
 .verticalDecorateDots::after {
   position: absolute;
   content: "◦";
   top: 100%;
-  transform: translate(0%, 25%);
+  transform: translate(0%, 0%);
 }
