@@ -3,6 +3,7 @@
     display: flex;
     gap: calc(var(--main-font) + 4vw);
     height: 90%;
+    width: 100%;
     align-items: center;
     justify-content: space-around;
 }
@@ -18,7 +19,7 @@
     flex-direction: column;
     align-items: center;
     justify-content: end;
-    width: 30%;
+    min-width: 28%;
 }
 
 .digitalClockCell::after {
@@ -26,7 +27,7 @@
     content: ':';
     font-size: var(--large-font);
     font-family: Orbitron, sans-serif;
-    right: -17%;
+    right: -20%;
     top: 12%;
 }
 
@@ -39,7 +40,7 @@
     font-family: Orbitron, sans-serif;
     font-size: var(--large-font);
     font-weight: 500;
-    align-self: center;
+    align-self: flex-end;
 }
 
 .digitalClockDigit::before {
