@@ -21,6 +21,12 @@
       "purpose": "any"
     },
     {
+      "src": "favicon.svg",
+      "sizes":"1024x1024",
+      "type": "image/svg",
+      "purpose": "any"
+    },
+    {
       "src": "./maskable_128.png",
       "sizes": "128x128",
       "type": "image/png",
@@ -31,10 +37,16 @@
       "sizes": "512x512",
       "type": "image/png",
       "purpose": "maskable"
+    },
+    {
+      "src": "favicon.svg",
+      "sizes": "1024x1024",
+      "type": "image/svg",
+      "purpose": "maskable"
     }
   ],
   "start_url": ".",
   "display": "standalone",
   "theme_color": "#000000",
-  "background_color": "#ffffff"
+  "background_color": "#000000"
 }

@@ -18,7 +18,7 @@
     position: relative;
     flex-direction: column;
     align-items: center;
-    justify-content: end;
+    justify-content: center;
     min-width: 27%;
 }
 
@@ -27,7 +27,7 @@
     content: ':';
     font-size: var(--large-font);
     font-family: Orbitron, sans-serif;
-    right: -22%;
+    right: -20%;
     top: 12%;
 }
 
@@ -40,7 +40,7 @@
     font-family: Orbitron, sans-serif;
     font-size: var(--large-font);
     font-weight: 500;
-    align-self: flex-end;
+    align-self: center;
 }
 
 .digitalClockDigit::before {
@@ -48,6 +48,6 @@
     content: '88';
     opacity: 10%;
     top: 0;
-    left: 100%;
-    transform: translateX(-100%);
+    left: 50%;
+    transform: translateX(-50%);
 }
